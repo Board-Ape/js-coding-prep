@@ -12,7 +12,12 @@
 // Characters, No spaces or punctuation, Capital letters = lower case
 
 function anagrams(stringA, stringB) {
+    return cleanString(stringA) === cleanString(stringB)
 
+}
+
+function cleanString(str) {
+    return str.replace(/[^a-zA-Z]/g, '').toLowerCase().split('').sort().join('')
 }
 
 module.exports = anagrams;
