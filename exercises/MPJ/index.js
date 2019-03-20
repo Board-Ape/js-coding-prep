@@ -18,17 +18,32 @@
 
 const fetch = require('node-fetch')
 
-async function fetchAvatarUrl(userId) {
-    const response = await fetch(`http://catappapi.herokuapp.com/users/${userId}`);
-    const data = await response.json()
 
-    return data.imageUrl
+async function fetchAvatarUrl(userId) {
+    const response = await fetch(`http://catappapi.herokuapp.com/users/${userId}`)
+    response
+    const data = await response.json()
+    return await Promise.all(data.cats.map(async (catId) => {
+        const res = await fetch(
+          `http://catappapi.herokuapp.com/cats/${catId}`
+        );
+        const result = await res.json()
+        return result.imageUrl
+    }))
+}
+
+// ===============
+// async function fetchAvatarUrl(userId) {
+//     const response = await fetch(`http://catappapi.herokuapp.com/users/${userId}`);
+//     const data = await response.json()
+
+//     return data.imageUrl
 
     // return fetch(`http://catappapi.herokuapp.com/users/${userId}`)
     //     .then(res => res.json())
     //     .then(data => data.imageUrl)
-}
-
+// }
+// ===============
 
 const result = fetchAvatarUrl(123)
 result
