@@ -7,7 +7,8 @@
     "jest-cli": "^24.1.0"
   },
   "devDependencies": {
-    "jest": "^24.4.0"
+    "jest": "^24.4.0",
+    "node-fetch": "^2.3.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
