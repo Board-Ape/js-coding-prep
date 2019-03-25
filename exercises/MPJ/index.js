@@ -81,14 +81,14 @@
 
 // console.log(j)
 
-var i = 999;
-(function my() {
-    console.log(i)
-})()
-if (true) {
-    let i = 888
-    console.log(i)
-}
-console.log(i);
+// var i = 999;
+// (function my() {
+//     console.log(i)
+// })()
+// if (true) {
+//     let i = 888
+//     console.log(i)
+// }
+// console.log(i);
 
 // Block Scoping with let and const
